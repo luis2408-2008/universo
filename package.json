@@ -5,10 +5,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
+    "dev:server": "nodemon --exec tsx server/index.ts",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "tsx server/db/migrate.ts",
+    "postinstall": "npm run db:push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -57,6 +61,7 @@
     "input-otp": "^1.2.4",
     "lucide-react": "^0.453.0",
     "memorystore": "^1.6.7",
+    "nodemon": "^3.1.9",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "react": "^18.3.1",
