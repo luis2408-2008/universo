@@ -45,25 +45,35 @@ export default function AuthPage() {
   }
 
   const onLoginSubmit = async (data: z.infer<typeof loginUserSchema>) => {
-    await loginMutation.mutateAsync(data, {
-      onSuccess: () => {
-        setLocation("/");
-      }
-    });
+    try {
+      await loginMutation.mutateAsync(data, {
+        onSuccess: () => {
+          setLocation("/");
+        }
+      });
+    } catch (error) {
+      // El error se maneja y muestra en la interfaz
+      // No es necesario hacer nada más aquí
+    }
   };
 
   const onRegisterSubmit = async (data: z.infer<typeof registerUserSchema>) => {
-    await registerMutation.mutateAsync(data, {
-      onSuccess: () => {
-        setRegisterSuccess(true);
-        // Redirect to login after successful registration
-        setTimeout(() => {
-          setIsRegister(false);
-          setRegisterSuccess(false);
-          loginForm.setValue("username", data.username);
-        }, 1500);
-      }
-    });
+    try {
+      await registerMutation.mutateAsync(data, {
+        onSuccess: () => {
+          setRegisterSuccess(true);
+          // Redirect to login after successful registration
+          setTimeout(() => {
+            setIsRegister(false);
+            setRegisterSuccess(false);
+            loginForm.setValue("username", data.username);
+          }, 1500);
+        }
+      });
+    } catch (error) {
+      // El error se maneja y muestra en la interfaz
+      // No es necesario hacer nada más aquí
+    }
   };
 
   const toggleView = () => {

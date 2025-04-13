@@ -32,8 +32,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const loginMutation = useMutation({
     mutationFn: async (credentials: LoginUser) => {
-      const res = await apiRequest("POST", "/api/login", credentials);
-      return await res.json();
+      try {
+        const res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(credentials),
+          credentials: "include",
+        });
+        
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.message || "Error de autenticación");
+        }
+        
+        return await res.json();
+      } catch (error) {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error("Ha ocurrido un error durante el inicio de sesión");
+      }
     },
     onSuccess: (user: User) => {
       queryClient.setQueryData(["/api/user"], user);
@@ -44,22 +62,39 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error de inicio de sesión",
-        description: error.message,
-        variant: "destructive",
-      });
+      // No usamos toast aquí para evitar la ventana emergente adicional
+      // El error se mostrará directamente en el formulario
+      console.error("Error de inicio de sesión:", error.message);
     },
   });
 
   const registerMutation = useMutation({
     mutationFn: async (credentials: RegisterUser) => {
-      const userToRegister = insertUserSchema.parse({
-        username: credentials.username,
-        password: credentials.password,
-      });
-      const res = await apiRequest("POST", "/api/register", userToRegister);
-      return await res.json();
+      try {
+        const userToRegister = insertUserSchema.parse({
+          username: credentials.username,
+          password: credentials.password,
+        });
+        
+        const res = await fetch("/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userToRegister),
+          credentials: "include",
+        });
+        
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.message || "Error al crear la cuenta");
+        }
+        
+        return await res.json();
+      } catch (error) {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error("Ha ocurrido un error durante el registro");
+      }
     },
     onSuccess: (user: User) => {
       queryClient.setQueryData(["/api/user"], user);
@@ -70,11 +105,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error de registro",
-        description: error.message,
-        variant: "destructive",
-      });
+      // No usamos toast aquí para evitar la ventana emergente adicional
+      // El error se mostrará directamente en el formulario
+      console.error("Error de registro:", error.message);
     },
   });
 
