@@ -156,18 +156,34 @@ export const videos = [
   {
     title: "El Big Bang Explicado",
     description: "Una explicación detallada sobre la teoría del Big Bang, sus evidencias y cómo se ha desarrollado a lo largo del tiempo.",
-    videoId: "WBvndBkZ6Z8",
+    videoId: "e1_EBjaaMc4",
     thumbnailUrl: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    duration: "10:45 min",
+    duration: "11:23 min",
     category: "Cosmología"
   },
   {
     title: "¿Existe el Multiverso?",
     description: "Un análisis científico sobre la teoría del multiverso, sus implicaciones y las evidencias que podrían respaldarla.",
-    videoId: "dVWbx8SfJrE",
+    videoId: "pGnOBGd_S-k",
     thumbnailUrl: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    duration: "15:22 min",
+    duration: "10:54 min",
     category: "Física Teórica"
+  },
+  {
+    title: "Agujeros Negros Explicados",
+    description: "Todo lo que necesitas saber sobre los agujeros negros: cómo se forman, sus características y los misterios que encierran.",
+    videoId: "X5p-vZUmSdg",
+    thumbnailUrl: "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    duration: "15:16 min",
+    category: "Astrofísica"
+  },
+  {
+    title: "La Materia Oscura",
+    description: "Explorando el misterio de la materia oscura y cómo afecta a nuestra comprensión del universo.",
+    videoId: "9W3RsaWuCuE",
+    thumbnailUrl: "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    duration: "10:17 min",
+    category: "Astrofísica"
   }
 ];
 
