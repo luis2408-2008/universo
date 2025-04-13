@@ -89,19 +89,19 @@ export const theories = [
   {
     title: "Teoría del Big Bang",
     content: "La teoría más aceptada actualmente que explica el origen del universo como una gran explosión hace aproximadamente 13.800 millones de años.",
-    imageUrl: "https://images.nasa.gov/fileLibrary/nasa_images_gallery/hi_res/0301627.jpg",
+    imageUrl: "/images/big-bang.jpg",
     category: "Cosmología"
   },
   {
     title: "Teoría Inflacionaria",
     content: "Propone que el universo experimentó una expansión exponencial en sus primeros momentos, explicando su uniformidad a gran escala.",
-    imageUrl: "https://stsci-opo.org/STScI-01GA6KKWG27HCQF5Z7C1RAPTT7.png",
+    imageUrl: "/images/inflation.jpg",
     category: "Física Cuántica"
   },
   {
     title: "Teoría del Multiverso",
     content: "Sugiere la existencia de múltiples universos paralelos, cada uno con diferentes leyes físicas y constantes fundamentales.",
-    imageUrl: "https://cdn.spacetelescope.org/archives/images/large/heic2017a.jpg",
+    imageUrl: "/images/multiverse.jpg",
     category: "Teoría de Cuerdas"
   }
 ];
@@ -110,12 +110,12 @@ export const conspiracies = [
   {
     title: "Hipótesis de la Simulación",
     content: "¿Y si toda nuestra realidad fuera una simulación computacional creada por una civilización avanzada? Exploramos esta controvertida teoría.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Mandelbrot_set_with_coloured_environment.png"
+    imageUrl: "/images/simulation.jpg"
   },
   {
     title: "Intervención Extraterrestre",
     content: "Teorías que sugieren que civilizaciones alienígenas avanzadas pudieron haber influido en el desarrollo del universo o la vida en la Tierra.",
-    imageUrl: "https://cdn.pixabay.com/photo/2016/09/01/08/24/sombrero-galaxy-1635638_1280.jpg"
+    imageUrl: "/images/alien.jpg"
   }
 ];
 
@@ -192,14 +192,14 @@ export const experts = [
     name: "Dr. Carlos Ramírez",
     title: "Astrofísico, Universidad de Barcelona",
     quote: "La teoría de la relatividad general de Einstein nos ha proporcionado un marco increíblemente preciso para entender la estructura a gran escala del universo. Sin embargo, aún no hemos logrado reconciliarla con la mecánica cuántica, lo que sugiere que podría haber una teoría aún más fundamental por descubrir. Esta teoría unificada podría revolucionar nuestra comprensión sobre el origen del universo.",
-    imageUrl: "https://cdn.pixabay.com/photo/2019/11/11/10/05/scientist-4617335_1280.jpg",
+    imageUrl: "/images/expert1.jpg",
     tags: ["Relatividad", "Mecánica Cuántica"]
   },
   {
     name: "Dra. Elena Martínez",
     title: "Cosmóloga, Instituto de Astrofísica de Canarias",
     quote: "La materia oscura y la energía oscura representan el 95% del contenido del universo, pero aún desconocemos su naturaleza fundamental. Estas misteriosas componentes son quizás la pista más importante que tenemos sobre la estructura del cosmos y podrían proporcionarnos información crucial sobre sus orígenes. Los próximos experimentos y observatorios están diseñados específicamente para desentrañar estos misterios.",
-    imageUrl: "https://cdn.pixabay.com/photo/2018/02/16/14/09/portrait-3157821_1280.jpg",
+    imageUrl: "/images/expert2.jpg",
     tags: ["Materia Oscura", "Energía Oscura"]
   }
 ];
