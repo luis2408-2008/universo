@@ -169,6 +169,48 @@ export default function HomePage() {
                 content={theory.content}
                 imageUrl={theory.imageUrl}
                 category={theory.category}
+                onClick={() => {
+                  // Crear un modal o diálogo con contenido expandido
+                  const modalElement = document.createElement('div');
+                  modalElement.className = 'theory-modal fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4';
+                  
+                  const modalContent = document.createElement('div');
+                  modalContent.className = 'bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 relative';
+                  
+                  modalContent.innerHTML = `
+                    <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <h2 class="text-2xl font-bold mb-4">${theory.title}</h2>
+                    <img src="${theory.imageUrl}" alt="${theory.title}" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <div class="space-y-4">
+                      <p>${theory.content}</p>
+                      <h3 class="text-lg font-semibold">Historia y desarrollo</h3>
+                      <p>La teoría ${theory.title} ha evolucionado significativamente a lo largo de las décadas, con múltiples científicos contribuyendo a su desarrollo y refinamiento.</p>
+                      <h3 class="text-lg font-semibold">Evidencia científica</h3>
+                      <p>Entre las evidencias que respaldan esta teoría se encuentran observaciones astronómicas detalladas, mediciones de la radiación cósmica de fondo y estudios sobre la distribución de galaxias en el universo observable.</p>
+                      <h3 class="text-lg font-semibold">Implicaciones cosmológicas</h3>
+                      <p>Esta teoría tiene profundas implicaciones para nuestra comprensión del cosmos, incluyendo predicciones sobre el destino final del universo y la naturaleza del espacio-tiempo.</p>
+                      <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary rounded-full text-sm">${theory.category}</span>
+                    </div>
+                  `;
+                  
+                  modalElement.appendChild(modalContent);
+                  document.body.appendChild(modalElement);
+                  
+                  // Agregar funcionalidad de cierre al botón
+                  const closeButton = modalContent.querySelector('button');
+                  closeButton?.addEventListener('click', () => {
+                    document.body.removeChild(modalElement);
+                  });
+                  
+                  // Cerrar al hacer clic fuera del contenido
+                  modalElement.addEventListener('click', (e) => {
+                    if (e.target === modalElement) {
+                      document.body.removeChild(modalElement);
+                    }
+                  });
+                }}
               />
             ))}
           </div>
@@ -189,6 +231,51 @@ export default function HomePage() {
                 imageUrl={conspiracy.imageUrl}
                 category=""
                 orientation="horizontal"
+                onClick={() => {
+                  // Crear un modal o diálogo con contenido expandido
+                  const modalElement = document.createElement('div');
+                  modalElement.className = 'conspiracy-modal fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4';
+                  
+                  const modalContent = document.createElement('div');
+                  modalContent.className = 'bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 relative';
+                  
+                  modalContent.innerHTML = `
+                    <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <h2 class="text-2xl font-bold mb-4">${conspiracy.title}</h2>
+                    <img src="${conspiracy.imageUrl}" alt="${conspiracy.title}" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <div class="space-y-4">
+                      <p>${conspiracy.content}</p>
+                      <h3 class="text-lg font-semibold">Orígenes históricos</h3>
+                      <p>Esta teoría alternativa surgió inicialmente en la década de 1970, ganando popularidad gradualmente en círculos de pensamiento no convencional y entre entusiastas de fenómenos inexplicables.</p>
+                      <h3 class="text-lg font-semibold">Argumentos principales</h3>
+                      <p>Los defensores de esta teoría señalan varios fenómenos observables que, según ellos, no pueden explicarse satisfactoriamente con las teorías científicas convencionales. Entre estos fenómenos se incluyen ciertas anomalías cósmicas y patrones matemáticos aparentemente no aleatorios.</p>
+                      <h3 class="text-lg font-semibold">Perspectiva científica</h3>
+                      <p>La comunidad científica predominante considera que esta teoría carece de evidencia empírica suficiente para ser considerada viable. Sin embargo, algunos aspectos de la misma han inspirado líneas de investigación interesantes en campos como la física teórica y la cosmología computacional.</p>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary rounded-full text-sm">Teoría alternativa</span>
+                        <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary rounded-full text-sm">Cosmología especulativa</span>
+                      </div>
+                    </div>
+                  `;
+                  
+                  modalElement.appendChild(modalContent);
+                  document.body.appendChild(modalElement);
+                  
+                  // Agregar funcionalidad de cierre al botón
+                  const closeButton = modalContent.querySelector('button');
+                  closeButton?.addEventListener('click', () => {
+                    document.body.removeChild(modalElement);
+                  });
+                  
+                  // Cerrar al hacer clic fuera del contenido
+                  modalElement.addEventListener('click', (e) => {
+                    if (e.target === modalElement) {
+                      document.body.removeChild(modalElement);
+                    }
+                  });
+                }}
               />
             ))}
           </div>
@@ -264,7 +351,58 @@ export default function HomePage() {
               </h2>
               <p className="mb-6 opacity-90">{homeTexts.newsletter.subtitle}</p>
               
-              <form className="flex flex-col sm:flex-row gap-4">
+              <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => {
+                e.preventDefault();
+                
+                const emailInput = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement;
+                const email = emailInput.value;
+                
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                  // Mostrar mensaje de error
+                  const errorElement = document.createElement('div');
+                  errorElement.className = 'newsletter-error text-red-300 text-sm mt-2';
+                  errorElement.textContent = 'Por favor, introduce un correo electrónico válido.';
+                  
+                  // Eliminar mensaje de error anterior si existe
+                  const existingError = e.currentTarget.querySelector('.newsletter-error');
+                  if (existingError) {
+                    existingError.remove();
+                  }
+                  
+                  e.currentTarget.appendChild(errorElement);
+                  return;
+                }
+                
+                // Simular suscripción exitosa
+                emailInput.value = '';
+                
+                // Eliminar mensaje de error si existe
+                const existingError = e.currentTarget.querySelector('.newsletter-error');
+                if (existingError) {
+                  existingError.remove();
+                }
+                
+                // Mostrar mensaje de éxito
+                const successElement = document.createElement('div');
+                successElement.className = 'newsletter-success text-green-300 text-sm mt-2';
+                successElement.textContent = '¡Gracias por suscribirte! Recibirás nuestro boletín mensual con las últimas actualizaciones.';
+                
+                // Eliminar mensaje de éxito anterior si existe
+                const existingSuccess = e.currentTarget.querySelector('.newsletter-success');
+                if (existingSuccess) {
+                  existingSuccess.remove();
+                }
+                
+                e.currentTarget.appendChild(successElement);
+                
+                // Eliminar el mensaje de éxito después de 5 segundos
+                setTimeout(() => {
+                  const currentSuccess = e.currentTarget.querySelector('.newsletter-success');
+                  if (currentSuccess) {
+                    currentSuccess.remove();
+                  }
+                }, 5000);
+              }}>
                 <Input
                   type="email"
                   placeholder={homeTexts.newsletter.placeholder}
@@ -337,6 +475,130 @@ export default function HomePage() {
                     <a 
                       href="#"
                       className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        
+                        // Crear un modal con contenido real sobre recursos
+                        const modalElement = document.createElement('div');
+                        modalElement.className = 'resource-modal fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4';
+                        
+                        const modalContent = document.createElement('div');
+                        modalContent.className = 'bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 relative';
+                        
+                        // Contenido específico basado en el tipo de recurso
+                        let resourceContent = '';
+                        
+                        if (link === 'Libros Recomendados') {
+                          resourceContent = `
+                            <h3 class="text-lg font-semibold mb-4">Libros recomendados sobre Cosmología</h3>
+                            <ul class="space-y-3">
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">Breve Historia del Tiempo</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Stephen Hawking</div>
+                                <p class="text-sm mt-1">Un clásico que explora los conceptos fundamentales del universo, desde el Big Bang hasta los agujeros negros.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">El Universo Elegante</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Brian Greene</div>
+                                <p class="text-sm mt-1">Explorando la teoría de cuerdas y la búsqueda de una teoría unificada del universo.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">Cosmos</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Carl Sagan</div>
+                                <p class="text-sm mt-1">Un viaje fascinante a través de los misterios del cosmos y la historia de nuestra comprensión del universo.</p>
+                              </li>
+                            </ul>
+                          `;
+                        } else if (link === 'Enlaces Científicos') {
+                          resourceContent = `
+                            <h3 class="text-lg font-semibold mb-4">Enlaces a recursos científicos</h3>
+                            <ul class="space-y-3">
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">NASA - Astrofísica</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">nasa.gov/universe</div>
+                                <p class="text-sm mt-1">Portal de la NASA dedicado a la investigación astrofísica y cosmológica.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">European Space Agency</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">esa.int/Science_Exploration</div>
+                                <p class="text-sm mt-1">Investigaciones y misiones de la ESA relacionadas con el origen y evolución del universo.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">Observatorio Astronómico Nacional</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">oan.es</div>
+                                <p class="text-sm mt-1">Recursos e investigaciones del Observatorio Astronómico Nacional de España.</p>
+                              </li>
+                            </ul>
+                          `;
+                        } else if (link === 'Documentales') {
+                          resourceContent = `
+                            <h3 class="text-lg font-semibold mb-4">Documentales recomendados</h3>
+                            <ul class="space-y-3">
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">Cosmos: Odisea en el Espacio</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Neil deGrasse Tyson (2014)</div>
+                                <p class="text-sm mt-1">Continuación moderna de la serie clásica de Carl Sagan que explora los misterios del universo.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">El Universo</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">History Channel (2007-2015)</div>
+                                <p class="text-sm mt-1">Serie documental que utiliza imágenes generadas por computadora para explorar los misterios del universo.</p>
+                              </li>
+                              <li class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <div class="font-medium">Viaje a los límites del Universo</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">National Geographic (2008)</div>
+                                <p class="text-sm mt-1">Un recorrido visual impresionante desde la Tierra hasta los confines del universo observable.</p>
+                              </li>
+                            </ul>
+                          `;
+                        } else if (link === 'Glosario Cósmico') {
+                          resourceContent = `
+                            <h3 class="text-lg font-semibold mb-4">Glosario de términos cosmológicos</h3>
+                            <dl class="space-y-3">
+                              <div class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <dt class="font-medium">Big Bang</dt>
+                                <dd class="text-sm mt-1">Modelo cosmológico predominante que describe el origen y evolución temprana del universo, donde todo comenzó desde un estado extremadamente caliente y denso hace aproximadamente 13.800 millones de años.</dd>
+                              </div>
+                              <div class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <dt class="font-medium">Agujero Negro</dt>
+                                <dd class="text-sm mt-1">Región del espacio-tiempo donde la gravedad es tan fuerte que nada, ni siquiera la luz, puede escapar de ella una vez que ha pasado el horizonte de eventos.</dd>
+                              </div>
+                              <div class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <dt class="font-medium">Materia Oscura</dt>
+                                <dd class="text-sm mt-1">Tipo hipotético de materia que no emite ni absorbe luz u otra radiación electromagnética, pero cuya existencia se infiere por sus efectos gravitacionales sobre la materia visible.</dd>
+                              </div>
+                              <div class="border-b border-gray-200 dark:border-gray-700 pb-3">
+                                <dt class="font-medium">Energía Oscura</dt>
+                                <dd class="text-sm mt-1">Forma hipotética de energía que permea todo el espacio y tiende a acelerar la expansión del universo.</dd>
+                              </div>
+                            </dl>
+                          `;
+                        }
+                        
+                        modalContent.innerHTML = `
+                          <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                          </button>
+                          <h2 class="text-2xl font-bold mb-4">${link}</h2>
+                          ${resourceContent}
+                        `;
+                        
+                        modalElement.appendChild(modalContent);
+                        document.body.appendChild(modalElement);
+                        
+                        // Agregar funcionalidad de cierre al botón
+                        const closeButton = modalContent.querySelector('button');
+                        closeButton?.addEventListener('click', () => {
+                          document.body.removeChild(modalElement);
+                        });
+                        
+                        // Cerrar al hacer clic fuera del contenido
+                        modalElement.addEventListener('click', (e) => {
+                          if (e.target === modalElement) {
+                            document.body.removeChild(modalElement);
+                          }
+                        });
+                      }}
                     >
                       {link}
                     </a>
