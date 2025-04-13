@@ -89,19 +89,19 @@ export const theories = [
   {
     title: "Teoría del Big Bang",
     content: "La teoría más aceptada actualmente que explica el origen del universo como una gran explosión hace aproximadamente 13.800 millones de años.",
-    imageUrl: "https://images.unsplash.com/photo-1544616326-a69b32cab9ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://images.nasa.gov/fileLibrary/nasa_images_gallery/hi_res/0301627.jpg",
     category: "Cosmología"
   },
   {
     title: "Teoría Inflacionaria",
     content: "Propone que el universo experimentó una expansión exponencial en sus primeros momentos, explicando su uniformidad a gran escala.",
-    imageUrl: "https://images.unsplash.com/photo-1566560073340-decc8d1f19b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://stsci-opo.org/STScI-01GA6KKWG27HCQF5Z7C1RAPTT7.png",
     category: "Física Cuántica"
   },
   {
     title: "Teoría del Multiverso",
     content: "Sugiere la existencia de múltiples universos paralelos, cada uno con diferentes leyes físicas y constantes fundamentales.",
-    imageUrl: "https://images.unsplash.com/photo-1506703719100-a0b3a51e5aca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://cdn.spacetelescope.org/archives/images/large/heic2017a.jpg",
     category: "Teoría de Cuerdas"
   }
 ];
@@ -110,12 +110,12 @@ export const conspiracies = [
   {
     title: "Hipótesis de la Simulación",
     content: "¿Y si toda nuestra realidad fuera una simulación computacional creada por una civilización avanzada? Exploramos esta controvertida teoría.",
-    imageUrl: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Mandelbrot_set_with_coloured_environment.png"
   },
   {
     title: "Intervención Extraterrestre",
     content: "Teorías que sugieren que civilizaciones alienígenas avanzadas pudieron haber influido en el desarrollo del universo o la vida en la Tierra.",
-    imageUrl: "https://images.unsplash.com/photo-1501862700950-18382cd41497?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://cdn.pixabay.com/photo/2016/09/01/08/24/sombrero-galaxy-1635638_1280.jpg"
   }
 ];
 
@@ -157,7 +157,7 @@ export const videos = [
     title: "El Big Bang Explicado",
     description: "Una explicación detallada sobre la teoría del Big Bang, sus evidencias y cómo se ha desarrollado a lo largo del tiempo.",
     videoId: "e1_EBjaaMc4",
-    thumbnailUrl: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    thumbnailUrl: "https://img.youtube.com/vi/e1_EBjaaMc4/maxresdefault.jpg",
     duration: "11:23 min",
     category: "Cosmología"
   },
@@ -165,7 +165,7 @@ export const videos = [
     title: "¿Existe el Multiverso?",
     description: "Un análisis científico sobre la teoría del multiverso, sus implicaciones y las evidencias que podrían respaldarla.",
     videoId: "pGnOBGd_S-k",
-    thumbnailUrl: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    thumbnailUrl: "https://img.youtube.com/vi/pGnOBGd_S-k/maxresdefault.jpg",
     duration: "10:54 min",
     category: "Física Teórica"
   },
@@ -173,7 +173,7 @@ export const videos = [
     title: "Agujeros Negros Explicados",
     description: "Todo lo que necesitas saber sobre los agujeros negros: cómo se forman, sus características y los misterios que encierran.",
     videoId: "X5p-vZUmSdg",
-    thumbnailUrl: "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    thumbnailUrl: "https://img.youtube.com/vi/X5p-vZUmSdg/maxresdefault.jpg",
     duration: "15:16 min",
     category: "Astrofísica"
   },
@@ -181,7 +181,7 @@ export const videos = [
     title: "La Materia Oscura",
     description: "Explorando el misterio de la materia oscura y cómo afecta a nuestra comprensión del universo.",
     videoId: "9W3RsaWuCuE",
-    thumbnailUrl: "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    thumbnailUrl: "https://img.youtube.com/vi/9W3RsaWuCuE/maxresdefault.jpg",
     duration: "10:17 min",
     category: "Astrofísica"
   }
@@ -192,14 +192,14 @@ export const experts = [
     name: "Dr. Carlos Ramírez",
     title: "Astrofísico, Universidad de Barcelona",
     quote: "La teoría de la relatividad general de Einstein nos ha proporcionado un marco increíblemente preciso para entender la estructura a gran escala del universo. Sin embargo, aún no hemos logrado reconciliarla con la mecánica cuántica, lo que sugiere que podría haber una teoría aún más fundamental por descubrir. Esta teoría unificada podría revolucionar nuestra comprensión sobre el origen del universo.",
-    imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://cdn.pixabay.com/photo/2019/11/11/10/05/scientist-4617335_1280.jpg",
     tags: ["Relatividad", "Mecánica Cuántica"]
   },
   {
     name: "Dra. Elena Martínez",
     title: "Cosmóloga, Instituto de Astrofísica de Canarias",
     quote: "La materia oscura y la energía oscura representan el 95% del contenido del universo, pero aún desconocemos su naturaleza fundamental. Estas misteriosas componentes son quizás la pista más importante que tenemos sobre la estructura del cosmos y podrían proporcionarnos información crucial sobre sus orígenes. Los próximos experimentos y observatorios están diseñados específicamente para desentrañar estos misterios.",
-    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://cdn.pixabay.com/photo/2018/02/16/14/09/portrait-3157821_1280.jpg",
     tags: ["Materia Oscura", "Energía Oscura"]
   }
 ];
