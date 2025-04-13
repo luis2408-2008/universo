@@ -1,0 +1,37 @@
+I want you to create a fully functional and visually stunning website project with both front-end and back-end using modern technologies. The website must be in Spanish (all UI, text, buttons, etc., in Spanish), and it should include the following features:
+
+1. Login & Registration System (Landing Page):
+	•	The first thing the user sees is a beautiful, animated login and registration page.
+	•	Registration Form must include: username, password, and confirm password.
+	•	Store users securely in a database and validate both login and registration.
+	•	After registering, the user is automatically redirected to the login screen.
+	•	Login must validate credentials against the database.
+	•	All forms must be fully functional and professionally styled with amazing CSS animations.
+	•	Buttons should have hover effects, transitions, and polished visuals.
+	•	Make sure all inputs are validated (e.g., matching passwords, empty fields, etc.).
+	•	Add loading animations and success/error indicators for feedback.
+
+2. Post-Login Main Page – “El Origen del Universo”:
+
+Once the user logs in successfully, they are taken to the main page of the website which is titled “El Origen del Universo”. This page must include:
+	•	Dark Mode and Light Mode switch.
+	•	A super modern, professional design with a responsive layout.
+	•	Sections for:
+	•	Scientific Theories about the origin of the universe.
+	•	Conspiracies and Hidden Stories (realistic or popular ones).
+	•	Fun facts and uncommon curiosities not found elsewhere.
+	•	Embedded YouTube videos with explanations related to space, the big bang, aliens, etc.
+	•	Opinions from scientists and even wild speculative ideas.
+	•	The content should be vast and diverse — anything from Big Bang theory to multiverse theories, religious origins, simulation theory, etc.
+
+3. Technical and Aesthetic Requirements:
+	•	Full frontend and backend, both clean and professional.
+	•	Backend with secure authentication, user management, and data handling.
+	•	Frontend must use professional design systems and amazing CSS animations.
+	•	Use React, Vue, or any modern JS framework (if possible).
+	•	Use Node.js, Flask, Django, or any backend framework you’re comfortable with.
+	•	Clean UI/UX, responsive design, modern fonts, animated transitions, illuminated highlights, interactive elements.
+	•	Make sure everything is fully functional — not just a simulation.
+	•	All content and labels must be written in Spanish, but the code and structure can remain in English.
+
+This project must feel like a real, premium website, combining deep information, aesthetics, and full functionality.
