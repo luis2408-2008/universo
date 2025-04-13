@@ -29,8 +29,17 @@ async function comparePasswords(supplied: string, stored: string) {
 }
 
 export function setupAuth(app: Express) {
+  // Usa un secreto aleatorio para cada reinicio en desarrollo
+  const SESSION_SECRET = process.env.SESSION_SECRET || 
+    (process.env.NODE_ENV === 'production' ? undefined : 
+      Array(32).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join(''));
+  
+  if (!SESSION_SECRET) {
+    throw new Error('SESSION_SECRET está vacío y la aplicación está en producción. Por favor, define SESSION_SECRET en las variables de entorno.');
+  }
+  
   const sessionSettings: session.SessionOptions = {
-    secret: process.env.SESSION_SECRET || "el-origen-del-universo-secreto",
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: storage.sessionStore,
@@ -107,16 +116,16 @@ export function setupAuth(app: Express) {
   });
 
   app.post("/api/login", (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
+    passport.authenticate("local", (err: Error | null, user: Express.User | false | null, info: { message: string } | undefined) => {
       if (err) return next(err);
       if (!user) {
         return res.status(401).json({ message: info?.message || "Autenticación fallida" });
       }
       
-      req.login(user, (err) => {
+      req.login(user, (err: Error | null) => {
         if (err) return next(err);
         // Don't send the password back to the client
-        const { password, ...userWithoutPassword } = user;
+        const { password, ...userWithoutPassword } = user as SelectUser;
         res.status(200).json(userWithoutPassword);
       });
     })(req, res, next);
